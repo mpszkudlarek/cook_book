@@ -36,7 +36,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative bg-[url('/placeholder.svg?height=400&width=1200')] bg-cover bg-center py-24">
+      <div className="relative bg-[url('/images/cookbook.jpg?height=400&width=1200')] bg-cover bg-center py-24">
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative container mx-auto text-center text-white animate-fade-in">
           <h1 className="text-5xl font-bold mb-4">Odkryj kulinarne inspiracje</h1>

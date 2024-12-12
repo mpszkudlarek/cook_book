@@ -28,7 +28,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '1', 
     name: 'Kremowa zupa pomidorowa', 
-    image: '/placeholder.svg', 
+    image: '/images/kremowa_zupa_pomidorowa.jpg',
     description: 'Klasyczna zupa pomidorowa z dodatkiem śmietany.',
     cookingTime: 30, 
     servings: 4, 
@@ -59,7 +59,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '2', 
     name: 'Spaghetti Bolognese', 
-    image: '/placeholder.svg', 
+    image: '/images/spaghetiti_bolognese.jpg',
     description: 'Klasyczne włoskie danie z mięsnym sosem i makaronem.',
     cookingTime: 45, 
     servings: 6, 
@@ -94,7 +94,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '3', 
     name: 'Sałatka Cezar z kurczakiem', 
-    image: '/placeholder.svg', 
+    image: '/images/salatka_cezar.jpg',
     description: 'Klasyczna sałatka z grillowanym kurczakiem, grzankami i sosem Cezar.',
     cookingTime: 20, 
     servings: 2, 
@@ -126,7 +126,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '4', 
     name: 'Smoothie owocowe', 
-    image: '/placeholder.svg', 
+    image: '/images/smoothie_owoc.jpg',
     description: 'Orzeźwiający napój z mieszanki świeżych owoców.',
     cookingTime: 5, 
     servings: 1, 
@@ -156,7 +156,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '5', 
     name: 'Pieczone warzywa', 
-    image: '/placeholder.svg', 
+    image: '/images/pieczone_warzywa.jpg',
     description: 'Kolorowa mieszanka pieczonych warzyw z ziołami.',
     cookingTime: 35, 
     servings: 4, 
@@ -189,7 +189,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '6', 
     name: 'Tiramisu', 
-    image: '/placeholder.svg', 
+    image: '/images/tiramisu.jpg',
     description: 'Klasyczny włoski deser z kawą i mascarpone.',
     cookingTime: 30, 
     servings: 8, 
@@ -222,7 +222,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '7', 
     name: 'Jajecznica z awokado', 
-    image: '/placeholder.svg', 
+    image: '/images/jajecznica_z_awokado.jpg',
     description: 'Pożywne śniadanie bogate w zdrowe tłuszcze.',
     cookingTime: 15, 
     servings: 2, 
@@ -254,7 +254,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '8', 
     name: 'Sałatka grecka', 
-    image: '/placeholder.svg', 
+    image: '/images/salatka_grecka.jpeg',
     description: 'Klasyczna sałatka z pomidorów, ogórków, oliwek i fety.',
     cookingTime: 15, 
     servings: 4, 
@@ -288,7 +288,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '9', 
     name: 'Naleśniki z dżemem', 
-    image: '/placeholder.svg', 
+    image: '/images/nalesniki.webp',
     description: 'Puszyste naleśniki podawane z domowym dżemem truskawkowym.',
     cookingTime: 30, 
     servings: 4, 
@@ -320,7 +320,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '10', 
     name: 'Wegańskie curry z batatami', 
-    image: '/placeholder.svg', 
+    image: '/images/weganskie_curry.jpg',
     description: 'Aromatyczne curry z batatami, ciecierzycą i szpinakiem.',
     cookingTime: 40, 
     servings: 4, 
@@ -355,7 +355,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '11', 
     name: 'Sałatka z grillowanym łososiem', 
-    image: '/placeholder.svg', 
+    image: '/images/salatka_losos.jpg',
     description: 'Lekka sałatka z grillowanym łososiem, awokado i sosem cytrynowym.',
     cookingTime: 25, 
     servings: 2, 
@@ -391,7 +391,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '12', 
     name: 'Keto burger z awokado', 
-    image: '/placeholder.svg', 
+    image: '/images/keto_burger.jpeg',
     description: 'Niskowęglowodanowy burger z kotletem wołowym i guacamole.',
     cookingTime: 30, 
     servings: 2, 
@@ -425,7 +425,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '13', 
     name: 'Koktajl proteinowy z borówkami', 
-    image: '/placeholder.svg', 
+    image: '/images/koktajl_borowki.jpg',
     description: 'Pożywny koktajl proteinowy idealny po treningu.',
     cookingTime: 5, 
     servings: 1, 
@@ -454,7 +454,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '14', 
     name: 'Omlet z pieczarkami i szpinakiem', 
-    image: '/placeholder.svg', 
+    image: '/images/omlet_pieczarki.jpg',
     description: 'Puszysty omlet z pieczarkami, szpinakiem i serem feta.',
     cookingTime: 15, 
     servings: 2, 
@@ -487,7 +487,7 @@ const mockRecipes: Recipe[] = [
   { 
     id: '15', 
     name: 'Zupa krem z dyni', 
-    image: '/placeholder.svg', 
+    image: '/images/krem_dynia.jpg',
     description: 'Kremowa zupa z dyni z nutą cynamonu i imbiru.',
     cookingTime: 35, 
     servings: 4, 
