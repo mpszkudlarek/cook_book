@@ -6,7 +6,7 @@ export type Recipe = {
   cookingTime: number
   servings: number
   type: 'zupa' | 'danie główne' | 'deser' | 'napoj' | 'śniadania'
-  meat: 'drob' | 'wolowina' | 'wieprzowina' | 'owoce-morza' | 'none'
+  meat: 'drób' | 'wołowina' | 'wieprzowina' | 'owoce-morza' | 'none'
   diet: 'wege' | 'wegetarianskie' | 'keto' | 'none'
   likes: number
   dateAdded: string
@@ -64,7 +64,7 @@ const mockRecipes: Recipe[] = [
     cookingTime: 45, 
     servings: 6, 
     type: 'danie główne',
-    meat: 'wolowina',
+    meat: 'wołowina',
     diet: 'none',
     likes: 85,
     dateAdded: '2023-11-10',
@@ -99,7 +99,7 @@ const mockRecipes: Recipe[] = [
     cookingTime: 20, 
     servings: 2, 
     type: 'danie główne',
-    meat: 'drob',
+    meat: 'drób',
     diet: 'none',
     likes: 95,
     dateAdded: '2023-11-05',
@@ -396,7 +396,7 @@ const mockRecipes: Recipe[] = [
     cookingTime: 30, 
     servings: 2, 
     type: 'danie główne',
-    meat: 'wolowina',
+    meat: 'wołowina',
     diet: 'keto',
     likes: 95,
     dateAdded: '2023-12-03',

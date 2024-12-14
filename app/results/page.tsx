@@ -16,7 +16,7 @@ import { useSearchParams } from 'next/navigation'
 import { useFavorites } from '@/contexts/FavoritesContext'
 
 type SortOption = 'all' | 'newest' | 'likes' | 'time-asc' | 'time-desc' | 'servings-asc' | 'servings-desc'
-type MeatFilter = 'all' | 'drob' | 'wolowina' | 'wieprzowina' | 'owoce-morza' | 'brak'
+type MeatFilter = 'all' | 'drób' | 'wołowina' | 'wieprzowina' | 'owoce-morza' | 'brak'
 type DietFilter = 'all' | 'wege' | 'wegetarianskie' | 'keto' | 'none'
 type TypeFilter = 'all' | 'zupa' | 'danie główne' | 'deser' | 'napoj' | 'śniadania'
 type TimeFilter = 'all' | '15' | '30' | '60' | '60+'
@@ -184,8 +184,8 @@ export default function ResultsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Wszystkie</SelectItem>
-                  <SelectItem value="drob">Drób</SelectItem>
-                  <SelectItem value="wolowina">Wołowina</SelectItem>
+                  <SelectItem value="drób">Drób</SelectItem>
+                  <SelectItem value="wołowina">Wołowina</SelectItem>
                   <SelectItem value="wieprzowina">Wieprzowina</SelectItem>
                   <SelectItem value="owoce-morza">Owoce morza</SelectItem>
                   <SelectItem value="brak">Brak</SelectItem>
