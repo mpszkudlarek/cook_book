@@ -26,7 +26,15 @@ export default function CookRecipePage() {
     } else {
       router.push('/results')
     }
-  }, [params.id, router])
+  }, [params.id, router, setCompletedSteps]);
+
+  useEffect(() => {
+    if (recipe && completedSteps.length === recipe.steps.length) {
+      setIsFinished(true);
+    } else {
+      setIsFinished(false);
+    }
+  }, [completedSteps, recipe]);
 
   const toggleStep = (index: number) => {
     setCompletedSteps(prev =>
@@ -154,16 +162,6 @@ export default function CookRecipePage() {
             </div>
           </CardContent>
         </Card>
-
-        <div className="flex justify-end items-center">
-          <Button
-              disabled={completedSteps.length !== recipe.steps.length}
-              onClick={() => setIsFinished(true)}
-              className="bg-green-500 text-white hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 disabled:bg-gray-300 dark:disabled:bg-gray-600 transition-colors"
-          >
-            Zakończ gotowanie
-          </Button>
-        </div>
 
         {isFinished && (
             <motion.div
