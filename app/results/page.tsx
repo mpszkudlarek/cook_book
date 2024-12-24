@@ -16,7 +16,7 @@ import { useSearchParams } from 'next/navigation'
 import { useFavorites } from '@/contexts/FavoritesContext'
 
 type SortOption = 'all' | 'newest' | 'likes' | 'time-asc' | 'time-desc' | 'servings-asc' | 'servings-desc'
-type MeatFilter = 'all' | 'drób' | 'wołowina' | 'wieprzowina' | 'owoce-morza' | 'brak'
+type MeatFilter = 'all' | 'drob' | 'wolowina' | 'wieprzowina' | 'owoce-morza' | 'brak'
 type DietFilter = 'all' | 'wege' | 'wegetarianskie' | 'keto' | 'none'
 type TypeFilter = 'all' | 'zupa' | 'danie główne' | 'deser' | 'napoj' | 'śniadania'
 type TimeFilter = 'all' | '15' | '30' | '60' | '60+'
@@ -58,7 +58,10 @@ export default function ResultsPage() {
 
   const applyFilters = useCallback(() => {
     let filteredRecipes = recipes.filter(recipe =>
-        recipe.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        recipe.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        recipe.ingredients.some(ingredient =>
+            ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
+        ) &&
         (meatFilter === 'all' || recipe.meat === meatFilter) &&
         (dietFilter === 'all' || recipe.diet === dietFilter) &&
         (typeFilter === 'all' || recipe.type === typeFilter) &&
@@ -184,8 +187,8 @@ export default function ResultsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Wszystkie</SelectItem>
-                  <SelectItem value="drób">Drób</SelectItem>
-                  <SelectItem value="wołowina">Wołowina</SelectItem>
+                  <SelectItem value="drob">Drób</SelectItem>
+                  <SelectItem value="wolowina">Wołowina</SelectItem>
                   <SelectItem value="wieprzowina">Wieprzowina</SelectItem>
                   <SelectItem value="owoce-morza">Owoce morza</SelectItem>
                   <SelectItem value="brak">Brak</SelectItem>
@@ -278,11 +281,11 @@ export default function ResultsPage() {
             </div>
           </div>
           <div className="w-full md:w-1/3">
-            <Label htmlFor="search">Szukaj przepisu</Label>
+            <Label htmlFor="search">Podaj nazwę przepisu lub konkretny składnik</Label>
             <Input
                 id="search"
                 type="search"
-                placeholder="Wpisz nazwę przepisu..."
+                placeholder="Wpisz nazwę przepisu lub składnik..."
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value)
