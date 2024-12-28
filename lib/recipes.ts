@@ -5,9 +5,9 @@ export type Recipe = {
   description: string
   cookingTime: number
   servings: number
-  type: 'zupa' | 'danie główne' | 'deser' | 'napoj' | 'śniadania'
-  meat: 'drób' | 'wołowina' | 'wieprzowina' | 'owoce-morza' | 'none'
-  diet: 'wege' | 'wegetarianskie' | 'keto' | 'none'
+  type: 'zupa' | 'danie główne' | 'deser' | 'napoj' | 'sniadania'
+  meat: 'drob' | 'wolowina' | 'wieprzowina' | 'owoce-morza' | 'none'
+  diet: 'wegańskie' | 'wegetarianskie' | 'keto' | 'none'
   likes: number
   dateAdded: string
   allergens: string[]
@@ -25,13 +25,13 @@ export type Comment = {
 }
 
 const mockRecipes: Recipe[] = [
-  { 
-    id: '1', 
-    name: 'Kremowa zupa pomidorowa', 
+  {
+    id: '1',
+    name: 'Kremowa zupa pomidorowa',
     image: '/images/kremowa_zupa_pomidorowa.jpg',
     description: 'Klasyczna zupa pomidorowa z dodatkiem śmietany.',
-    cookingTime: 30, 
-    servings: 4, 
+    cookingTime: 30,
+    servings: 4,
     type: 'zupa',
     meat: 'none',
     diet: 'wegetarianskie',
@@ -56,22 +56,22 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '2', 
-    name: 'Spaghetti Bolognese', 
+  {
+    id: '2',
+    name: 'Spaghetti Bolognese',
     image: '/images/spaghetiti_bolognese.jpg',
     description: 'Klasyczne włoskie danie z mięsnym sosem i makaronem.',
-    cookingTime: 45, 
-    servings: 6, 
+    cookingTime: 45,
+    servings: 6,
     type: 'danie główne',
-    meat: 'wołowina',
+    meat: 'wolowina',
     diet: 'none',
     likes: 85,
     dateAdded: '2023-11-10',
     allergens: ['gluten', 'laktoza'],
     ingredients: [
       { name: 'Makaron spaghetti', amount: '500g' },
-      { name: 'Mielona wołowina', amount: '500g' },
+      { name: 'Mielona wolowina', amount: '500g' },
       { name: 'Cebula', amount: '1 sztuka' },
       { name: 'Czosnek', amount: '2 ząbki' },
       { name: 'Pomidory krojone', amount: '400g' },
@@ -91,15 +91,15 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '3', 
-    name: 'Sałatka Cezar z kurczakiem', 
+  {
+    id: '3',
+    name: 'Sałatka Cezar z kurczakiem',
     image: '/images/salatka_cezar.jpg',
     description: 'Klasyczna sałatka z grillowanym kurczakiem, grzankami i sosem Cezar.',
-    cookingTime: 20, 
-    servings: 2, 
+    cookingTime: 20,
+    servings: 2,
     type: 'danie główne',
-    meat: 'drób',
+    meat: 'drob',
     diet: 'none',
     likes: 95,
     dateAdded: '2023-11-05',
@@ -123,16 +123,16 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '4', 
-    name: 'Smoothie owocowe', 
+  {
+    id: '4',
+    name: 'Smoothie owocowe',
     image: '/images/smoothie_owoc.jpg',
     description: 'Orzeźwiający napój z mieszanki świeżych owoców.',
-    cookingTime: 5, 
-    servings: 1, 
+    cookingTime: 5,
+    servings: 1,
     type: 'napoj',
     meat: 'none',
-    diet: 'wege',
+    diet: 'wegańskie',
     likes: 150,
     dateAdded: '2023-11-01',
     allergens: [],
@@ -153,16 +153,16 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '5', 
-    name: 'Pieczone warzywa', 
+  {
+    id: '5',
+    name: 'Pieczone warzywa',
     image: '/images/pieczone_warzywa.jpg',
     description: 'Kolorowa mieszanka pieczonych warzyw z ziołami.',
-    cookingTime: 35, 
-    servings: 4, 
+    cookingTime: 35,
+    servings: 4,
     type: 'danie główne',
     meat: 'none',
-    diet: 'wege',
+    diet: 'wegańskie',
     likes: 75,
     dateAdded: '2023-10-28',
     allergens: [],
@@ -186,13 +186,13 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '6', 
-    name: 'Tiramisu', 
+  {
+    id: '6',
+    name: 'Tiramisu',
     image: '/images/tiramisu.jpg',
     description: 'Klasyczny włoski deser z kawą i mascarpone.',
-    cookingTime: 30, 
-    servings: 8, 
+    cookingTime: 30,
+    servings: 8,
     type: 'deser',
     meat: 'none',
     diet: 'wegetarianskie',
@@ -219,14 +219,14 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '7', 
-    name: 'Jajecznica z awokado', 
+  {
+    id: '7',
+    name: 'Jajecznica z awokado',
     image: '/images/jajecznica_z_awokado.jpg',
     description: 'Pożywne śniadanie bogate w zdrowe tłuszcze.',
-    cookingTime: 15, 
-    servings: 2, 
-    type: 'śniadania',
+    cookingTime: 15,
+    servings: 2,
+    type: 'sniadania',
     meat: 'none',
     diet: 'wegetarianskie',
     likes: 110,
@@ -251,13 +251,13 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '8', 
-    name: 'Sałatka grecka', 
+  {
+    id: '8',
+    name: 'Sałatka grecka',
     image: '/images/salatka_grecka.jpeg',
     description: 'Klasyczna sałatka z pomidorów, ogórków, oliwek i fety.',
-    cookingTime: 15, 
-    servings: 4, 
+    cookingTime: 15,
+    servings: 4,
     type: 'danie główne',
     meat: 'none',
     diet: 'wegetarianskie',
@@ -285,14 +285,14 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '9', 
-    name: 'Naleśniki z dżemem', 
+  {
+    id: '9',
+    name: 'Naleśniki z dżemem',
     image: '/images/nalesniki.webp',
     description: 'Puszyste naleśniki podawane z domowym dżemem truskawkowym.',
-    cookingTime: 30, 
-    servings: 4, 
-    type: 'śniadania',
+    cookingTime: 30,
+    servings: 4,
+    type: 'sniadania',
     meat: 'none',
     diet: 'wegetarianskie',
     likes: 130,
@@ -317,16 +317,16 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '10', 
-    name: 'Wegańskie curry z batatami', 
+  {
+    id: '10',
+    name: 'Wegańskie curry z batatami',
     image: '/images/weganskie_curry.jpg',
     description: 'Aromatyczne curry z batatami, ciecierzycą i szpinakiem.',
-    cookingTime: 40, 
-    servings: 4, 
+    cookingTime: 40,
+    servings: 4,
     type: 'danie główne',
     meat: 'none',
-    diet: 'wege',
+    diet: 'wegańskie',
     likes: 88,
     dateAdded: '2023-11-28',
     allergens: [],
@@ -352,13 +352,13 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '11', 
-    name: 'Sałatka z grillowanym łososiem', 
+  {
+    id: '11',
+    name: 'Sałatka z grillowanym łososiem',
     image: '/images/salatka_losos.jpg',
     description: 'Lekka sałatka z grillowanym łososiem, awokado i sosem cytrynowym.',
-    cookingTime: 25, 
-    servings: 2, 
+    cookingTime: 25,
+    servings: 2,
     type: 'danie główne',
     meat: 'owoce-morza',
     diet: 'none',
@@ -388,21 +388,21 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '12', 
-    name: 'Keto burger z awokado', 
+  {
+    id: '12',
+    name: 'Keto burger z awokado',
     image: '/images/keto_burger.jpeg',
     description: 'Niskowęglowodanowy burger z kotletem wołowym i guacamole.',
-    cookingTime: 30, 
-    servings: 2, 
+    cookingTime: 30,
+    servings: 2,
     type: 'danie główne',
-    meat: 'wołowina',
+    meat: 'wolowina',
     diet: 'keto',
     likes: 95,
     dateAdded: '2023-12-03',
     allergens: ['jaja'],
     ingredients: [
-      { name: 'Mielona wołowina', amount: '400g' },
+      { name: 'Mielona wolowina', amount: '400g' },
       { name: 'Awokado', amount: '1 sztuka' },
       { name: 'Pomidor', amount: '1 sztuka' },
       { name: 'Ser cheddar', amount: '2 plastry' },
@@ -422,13 +422,13 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '13', 
-    name: 'Koktajl proteinowy z borówkami', 
+  {
+    id: '13',
+    name: 'Koktajl proteinowy z borówkami',
     image: '/images/koktajl_borowki.jpg',
     description: 'Pożywny koktajl proteinowy idealny po treningu.',
-    cookingTime: 5, 
-    servings: 1, 
+    cookingTime: 5,
+    servings: 1,
     type: 'napoj',
     meat: 'none',
     diet: 'wegetarianskie',
@@ -451,14 +451,14 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '14', 
-    name: 'Omlet z pieczarkami i szpinakiem', 
+  {
+    id: '14',
+    name: 'Omlet z pieczarkami i szpinakiem',
     image: '/images/omlet_pieczarki.jpg',
     description: 'Puszysty omlet z pieczarkami, szpinakiem i serem feta.',
-    cookingTime: 15, 
-    servings: 2, 
-    type: 'śniadania',
+    cookingTime: 15,
+    servings: 2,
+    type: 'sniadania',
     meat: 'none',
     diet: 'wegetarianskie',
     likes: 65,
@@ -484,16 +484,16 @@ const mockRecipes: Recipe[] = [
     ],
     comments: []
   },
-  { 
-    id: '15', 
-    name: 'Zupa krem z dyni', 
+  {
+    id: '15',
+    name: 'Zupa krem z dyni',
     image: '/images/krem_dynia.jpg',
     description: 'Kremowa zupa z dyni z nutą cynamonu i imbiru.',
-    cookingTime: 35, 
-    servings: 4, 
+    cookingTime: 35,
+    servings: 4,
     type: 'zupa',
     meat: 'none',
-    diet: 'wege',
+    diet: 'wegańskie',
     likes: 110,
     dateAdded: '2023-12-09',
     allergens: [],
@@ -519,6 +519,186 @@ const mockRecipes: Recipe[] = [
       'Podawaj posypane prażonymi pestkami dyni.'
     ],
     comments: []
+  },
+  {
+    id: '16',
+    name: 'Zapiekanka makaronowa z serem',
+    image: '/images/zapiekanka_makaronowa.jpg',
+    description: 'Pyszna zapiekanka z makaronu, sera i sosu beszamelowego.',
+    cookingTime: 40,
+    servings: 4,
+    type: 'danie główne',
+    meat: 'none',
+    diet: 'wegańskie',
+    likes: 95,
+    dateAdded: '2023-12-01',
+    allergens: ['laktoza', 'gluten'],
+    ingredients: [
+      { name: 'Makaron penne', amount: '250g' },
+      { name: 'Ser żółty', amount: '200g' },
+      { name: 'Mleko', amount: '500ml' },
+      { name: 'Masło', amount: '2 łyżki' },
+      { name: 'Mąka pszenna', amount: '2 łyżki' },
+      { name: 'Gałka muszkatołowa', amount: 'szczypta' },
+      { name: 'Sól i pieprz', amount: 'do smaku' }
+    ],
+    steps: [
+      'Ugotuj makaron al dente i odcedź.',
+      'Przygotuj sos beszamelowy: roztop masło, dodaj mąkę i mleko, mieszaj do uzyskania gładkiej konsystencji.',
+      'Dopraw sos solą, pieprzem i gałką muszkatołową.',
+      'Wymieszaj makaron z sosem i połową startego sera.',
+      'Przełóż do naczynia żaroodpornego, posyp resztą sera.',
+      'Piecz w 180°C przez 20 minut do zarumienienia.'
+    ],
+    comments: []
+  },
+  {
+    id: '17',
+    name: 'Placki ziemniaczane',
+    image: '/images/placki_ziemniaczane.webp',
+    description: 'Chrupiące placki z ziemniaków, doskonałe z kwaśną śmietaną.',
+    cookingTime: 30,
+    servings: 4,
+    type: 'danie główne',
+    meat: 'none',
+    diet: 'wegańskie',
+    likes: 120,
+    dateAdded: '2023-12-03',
+    allergens: ['jaja'],
+    ingredients: [
+      { name: 'Ziemniaki', amount: '1 kg' },
+      { name: 'Cebula', amount: '1 sztuka' },
+      { name: 'Jajka', amount: '2 sztuki' },
+      { name: 'Mąka pszenna', amount: '3 łyżki' },
+      { name: 'Sól i pieprz', amount: 'do smaku' },
+      { name: 'Olej do smażenia', amount: 'do smażenia' }
+    ],
+    steps: [
+      'Obierz i zetrzyj ziemniaki oraz cebulę na tarce.',
+      'Odciśnij nadmiar wody z ziemniaków.',
+      'Dodaj jajka, mąkę, sól i pieprz, wymieszaj.',
+      'Na rozgrzanym oleju smaż placki na złoty kolor z obu stron.',
+      'Podawaj z kwaśną śmietaną lub cukrem.'
+    ],
+    comments: []
+  },
+  {
+    id: '18',
+    name: 'Pizza Margherita',
+    image: '/images/pizza_margherita.jpg',
+    description: 'Klasyczna pizza z sosem pomidorowym, mozzarellą i bazylią.',
+    cookingTime: 60,
+    servings: 2,
+    type: 'danie główne',
+    meat: 'none',
+    diet: 'wegańskie',
+    likes: 200,
+    dateAdded: '2023-12-05',
+    allergens: ['gluten', 'laktoza'],
+    ingredients: [
+      { name: 'Ciasto na pizzę', amount: '1 porcja' },
+      { name: 'Sos pomidorowy', amount: '200g' },
+      { name: 'Mozzarella', amount: '200g' },
+      { name: 'Bazylia świeża', amount: 'kilka listków' },
+      { name: 'Oliwa z oliwek', amount: '1 łyżka' }
+    ],
+    steps: [
+      'Rozwałkuj ciasto i ułóż na blasze.',
+      'Posmaruj sosem pomidorowym.',
+      'Rozłóż kawałki mozzarelli na pizzy.',
+      'Piecz w piekarniku nagrzanym do 250°C przez 10-12 minut.',
+      'Po upieczeniu posyp świeżą bazylią i skrop oliwą.'
+    ],
+    comments: []
+  },
+  {
+    id: '19',
+    name: 'Koktajl bananowo-szpinakowy',
+    image: '/images/koktajl_banan_szpinak.webp',
+    description: 'Zdrowy i sycący koktajl z bananem, szpinakiem i mlekiem roślinnym.',
+    cookingTime: 5,
+    servings: 1,
+    type: 'napoj',
+    meat: 'none',
+    diet: 'wegańskie',
+    likes: 75,
+    dateAdded: '2023-12-06',
+    allergens: [],
+    ingredients: [
+      { name: 'Banan', amount: '1 sztuka' },
+      { name: 'Szpinak', amount: '1 garść' },
+      { name: 'Mleko roślinne', amount: '200 ml' },
+      { name: 'Miód', amount: '1 łyżeczka' }
+    ],
+    steps: [
+      'Włóż wszystkie składniki do blendera.',
+      'Miksuj do uzyskania gładkiej konsystencji.',
+      'Przelej do szklanki i podawaj od razu.'
+    ],
+    comments: []
+  },
+  {
+    id: '20',
+    name: 'Chili con carne',
+    image: '/images/chili_con_carne.jpg',
+    description: 'Aromatyczne danie meksykańskie z mięsem mielonym i fasolą.',
+    cookingTime: 50,
+    servings: 4,
+    type: 'danie główne',
+    meat: 'wolowina',
+    diet: 'none',
+    likes: 180,
+    dateAdded: '2023-12-07',
+    allergens: [],
+    ingredients: [
+      { name: 'Mielona wolowina', amount: '500g' },
+      { name: 'Czerwona fasola', amount: '400g' },
+      { name: 'Pomidory krojone', amount: '400g' },
+      { name: 'Cebula', amount: '1 sztuka' },
+      { name: 'Czosnek', amount: '2 ząbki' },
+      { name: 'Papryka chili', amount: '1 sztuka' },
+      { name: 'Przyprawa chili', amount: '1 łyżka' },
+      { name: 'Oliwa', amount: '2 łyżki' },
+      { name: 'Sól i pieprz', amount: 'do smaku' }
+    ],
+    steps: [
+      'Na patelni rozgrzej oliwę i zeszklij posiekaną cebulę z czosnkiem.',
+      'Dodaj mięso mielone i smaż, aż się zrumieni.',
+      'Dodaj przyprawy, pomidory i fasolę, wymieszaj.',
+      'Gotuj na małym ogniu przez 30 minut.',
+      'Podawaj z ryżem lub pieczywem.'
+    ],
+    comments: []
+  },
+  {
+    id: '21',
+    name: 'Pancakes z syropem klonowym',
+    image: '/images/pancakes.jpg',
+    description: 'Puszyste amerykańskie naleśniki podawane z syropem klonowym.',
+    cookingTime: 20,
+    servings: 4,
+    type: 'sniadania',
+    meat: 'none',
+    diet: 'none',
+    likes: 145,
+    dateAdded: '2023-12-08',
+    allergens: ['gluten', 'laktoza', 'jaja'],
+    ingredients: [
+      { name: 'Mąka pszenna', amount: '200g' },
+      { name: 'Mleko', amount: '250ml' },
+      { name: 'Jajka', amount: '2 sztuki' },
+      { name: 'Cukier', amount: '2 łyżki' },
+      { name: 'Proszek do pieczenia', amount: '1 łyżeczka' },
+      { name: 'Masło', amount: 'do smażenia' },
+      { name: 'Syrop klonowy', amount: 'do podania' }
+    ],
+    steps: [
+      'W misce wymieszaj mąkę, proszek do pieczenia i cukier.',
+      'Dodaj jajka i mleko, mieszając do uzyskania gładkiej masy.',
+      'Na patelni roztop masło i smaż pancakes na złoty kolor.',
+      'Podawaj z syropem klonowym.'
+    ],
+    comments: []
   }
 ]
 
@@ -526,16 +706,41 @@ export function addRecipe(recipe: Recipe) {
   mockRecipes.push({...recipe, comments: []});
 }
 
-export function getRandomRecipe(): Recipe {
-  const availableRecipes = mockRecipes.filter(recipe => !recipe.isRecentlyViewed);
-  if (availableRecipes.length === 0) {
-    mockRecipes.forEach(recipe => recipe.isRecentlyViewed = false);
-    return getRandomRecipe();
+type FilterParams = {
+  searchTerm?: string;
+  meatFilter?: string;
+  dietFilter?: string;
+  typeFilter?: string;
+  timeFilter?: string;
+};
+
+export function getRandomRecipe(filters: FilterParams = {}): Recipe | undefined {
+  const { searchTerm, meatFilter, dietFilter, typeFilter, timeFilter } = filters;
+
+  const filteredRecipes = mockRecipes.filter(recipe => {
+    const matchesSearch = !searchTerm ||
+        recipe.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        recipe.ingredients.some(ingredient =>
+            ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    const matchesMeat = meatFilter === 'all' || recipe.meat === meatFilter;
+    const matchesDiet = dietFilter === 'all' || recipe.diet === dietFilter;
+    const matchesType = typeFilter === 'all' || recipe.type === typeFilter;
+    const matchesTime = timeFilter === 'all' ||
+        (timeFilter === '15' && recipe.cookingTime <= 15) ||
+        (timeFilter === '30' && recipe.cookingTime <= 30) ||
+        (timeFilter === '60' && recipe.cookingTime <= 60) ||
+        (timeFilter === '60+' && recipe.cookingTime > 60);
+
+    return matchesSearch && matchesMeat && matchesDiet && matchesType && matchesTime;
+  });
+
+  if (filteredRecipes.length === 0) {
+    return undefined;
   }
-  const randomIndex = Math.floor(Math.random() * availableRecipes.length);
-  const selectedRecipe = availableRecipes[randomIndex];
-  selectedRecipe.isRecentlyViewed = true;
-  return selectedRecipe;
+
+  const randomIndex = Math.floor(Math.random() * filteredRecipes.length);
+  return filteredRecipes[randomIndex];
 }
 
 export function getAllRecipes(): Recipe[] {

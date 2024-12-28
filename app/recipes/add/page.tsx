@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from 'next/navigation'
+import { useState, useEffect, useCallback, useRef } from "react"
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -21,6 +21,8 @@ import { Recipe, addRecipe } from '@/lib/recipes'
 
 export default function AddRecipePage() {
   const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   const [ingredients, setIngredients] = useState([''])
   const [steps, setSteps] = useState([''])
   const [image, setImage] = useState<string | null>(null)
@@ -34,7 +36,28 @@ export default function AddRecipePage() {
   const [allergens, setAllergens] = useState<string[]>([])
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const addIngredient = () => setIngredients([...ingredients, ''])
+  const lastIngredientRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    setIsSubmitted(false)
+  }, [pathname, searchParams])
+
+  useEffect(() => {
+    if (isSubmitted) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isSubmitted]);
+
+  const addIngredient = () => {
+    setIngredients([...ingredients, ''])
+    setTimeout(() => lastIngredientRef.current?.focus(), 0)
+  }
   const removeIngredient = (index: number) => {
     const newIngredients = ingredients.filter((_, i) => i !== index)
     setIngredients(newIngredients)
@@ -110,10 +133,11 @@ export default function AddRecipePage() {
     setIngredients([''])
     setSteps([''])
     setImage(null)
+    setIsSubmitted(false) // Reset isSubmitted to false
   }
 
   return (
-      <div className="max-w-3xl mx-auto space-y-8 py-8">
+      <div className="relative max-w-3xl mx-auto space-y-8 py-8">
         <div className="flex items-center mb-8">
           <h1 className="text-3xl font-bold text-green-700 dark:text-green-300">Dodaj nowy przepis</h1>
           <div className="relative ml-2 group transition-transform duration-300 ease-in-out hover:scale-110">
@@ -257,8 +281,8 @@ export default function AddRecipePage() {
                       <SelectValue placeholder="Wybierz rodzaj mięsa" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="drób">Drób</SelectItem>
-                      <SelectItem value="wołowina">Wołowina</SelectItem>
+                      <SelectItem value="drob">Drób</SelectItem>
+                      <SelectItem value="wolowina">Wołowina</SelectItem>
                       <SelectItem value="wieprzowina">Wieprzowina</SelectItem>
                       <SelectItem value="owoce-morza">Owoce morza</SelectItem>
                       <SelectItem value="none">Brak</SelectItem>
@@ -274,7 +298,7 @@ export default function AddRecipePage() {
                     <SelectValue placeholder="Wybierz dietę" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="wege">Wege</SelectItem>
+                    <SelectItem value="wegańskie">Wege</SelectItem>
                     <SelectItem value="wegetarianskie">Wegetariańskie</SelectItem>
                     <SelectItem value="keto">Keto</SelectItem>
                     <SelectItem value="none">Brak</SelectItem>
@@ -287,6 +311,7 @@ export default function AddRecipePage() {
                 {ingredients.map((ingredient, index) => (
                     <div key={index} className="flex items-center space-x-2">
                       <Input
+                          ref={index === ingredients.length - 1 ? lastIngredientRef : null}
                           value={ingredient}
                           onChange={(e) => {
                             const newIngredients = [...ingredients]
@@ -371,17 +396,19 @@ export default function AddRecipePage() {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
-                  className="fixed inset-x-0 bottom-0 top-16 flex items-center justify-center backdrop-blur-sm z-50"
+                  className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+                  style={{ top: "0px" }}
               >
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
                   <h2 className="text-2xl font-bold mb-4 text-green-600 dark:text-green-400">Przepis dodany pomyślnie!</h2>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">Twój przepis został dodany do naszej bazy.</p>
                   <div className="flex justify-center space-x-4">
-                    <Button onClick={() => router.push('/results')} className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600">
+                    <Button onClick={() => {
+                      router.push('/results')
+                    }} className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600">
                       Przejdź do listy przepisów
                     </Button>
                     <Button onClick={() => {
-                      setIsSubmitted(false)
                       resetForm()
                     }} variant="outline" className="text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700">
                       Dodaj kolejny przepis

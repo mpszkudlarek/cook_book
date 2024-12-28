@@ -23,8 +23,8 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const toggleFavorite = (id: string) => {
     setFavorites(prev => {
       const newFavorites = prev.includes(id)
-        ? prev.filter(fav => fav !== id)
-        : [...prev, id]
+          ? prev.filter(fav => fav !== id)
+          : [...prev, id]
       localStorage.setItem('favorites', JSON.stringify(newFavorites))
       return newFavorites
     })
@@ -33,9 +33,9 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const isFavorite = (id: string) => favorites.includes(id)
 
   return (
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite, isFavorite }}>
-      {children}
-    </FavoritesContext.Provider>
+      <FavoritesContext.Provider value={{ favorites, toggleFavorite, isFavorite }}>
+        {children}
+      </FavoritesContext.Provider>
   )
 }
 
