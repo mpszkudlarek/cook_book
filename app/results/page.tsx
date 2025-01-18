@@ -17,9 +17,9 @@ import { useSearchParams } from 'next/navigation'
 import { useFavorites } from '@/contexts/FavoritesContext'
 
 type SortOption = 'all' | 'newest' | 'likes' | 'time-asc' | 'time-desc' | 'servings-asc' | 'servings-desc'
-type MeatFilter = 'all' | 'drob' | 'wolowina' | 'wieprzowina' | 'owoce-morza' | 'none'
-type DietFilter = 'all' | 'wegańskie' | 'wegetarianskie' | 'keto' | 'none'
-type TypeFilter = 'all' | 'zupa' | 'danie główne' | 'deser' | 'napoj' | 'śniadania'
+type MeatFilter = 'all' | 'drób' | 'wołowina' | 'wieprzowina' | 'owoce morza' | 'none'
+type DietFilter = 'all' | 'wegańskie' | 'wegetariańskie' | 'ketogeniczna' | 'none'
+type TypeFilter = 'all' | 'zupa' | 'danie główne' | 'deser' | 'napój' | 'śniadania'
 type TimeFilter = 'all' | '15' | '30' | '60' | '60+'
 type ServingsFilter = 'all' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | 'więcej'
 type AllergenFilter = 'all' | 'gluten' | 'orzechy' | 'laktoza' | 'jaja' | 'soja' | 'ryby' | 'skorupiaki'
@@ -217,10 +217,10 @@ export default function ResultsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Wszystkie</SelectItem>
-                  <SelectItem value="drob">Drób</SelectItem>
-                  <SelectItem value="wolowina">Wołowina</SelectItem>
+                  <SelectItem value="drób">Drób</SelectItem>
+                  <SelectItem value="wołowina">Wołowina</SelectItem>
                   <SelectItem value="wieprzowina">Wieprzowina</SelectItem>
-                  <SelectItem value="owoce-morza">Owoce morza</SelectItem>
+                  <SelectItem value="owoce morza">Owoce morza</SelectItem>
                   <SelectItem value="none">Brak</SelectItem>
                 </SelectContent>
               </Select>
@@ -235,8 +235,8 @@ export default function ResultsPage() {
                 <SelectContent>
                   <SelectItem value="all">Wszystkie</SelectItem>
                   <SelectItem value="wegańskie">Wegańskie</SelectItem>
-                  <SelectItem value="wegetarianskie">Wegetariańskie</SelectItem>
-                  <SelectItem value="keto">Keto</SelectItem>
+                  <SelectItem value="wegetariańskie">Wegetariańskie</SelectItem>
+                  <SelectItem value="ketogeniczna">Ketogeniczna</SelectItem>
                   <SelectItem value="none">Brak</SelectItem>
                 </SelectContent>
               </Select>
@@ -254,7 +254,7 @@ export default function ResultsPage() {
                   <SelectItem value="zupa">Zupy</SelectItem>
                   <SelectItem value="danie główne">Dania główne</SelectItem>
                   <SelectItem value="deser">Desery</SelectItem>
-                  <SelectItem value="napoj">Napoje</SelectItem>
+                  <SelectItem value="napój">Napoje</SelectItem>
                 </SelectContent>
               </Select>
             </div>

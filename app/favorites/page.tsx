@@ -95,7 +95,7 @@ export default function FavoritesPage() {
                 <SelectItem value="zupa">Zupy</SelectItem>
                 <SelectItem value="danie główne">Dania główne</SelectItem>
                 <SelectItem value="deser">Desery</SelectItem>
-                <SelectItem value="napoj">Napoje</SelectItem>
+                <SelectItem value="napój">Napoje</SelectItem>
                 <SelectItem value="śniadania">Śniadania</SelectItem>
               </SelectContent>
             </Select>

@@ -13,7 +13,7 @@ const popularCategories = [
   { name: 'Śniadania', icon: '🍳', filter: { type: 'śniadania' } },
   { name: 'Dania główne', icon: '🍝', filter: { type: 'danie główne' } },
   { name: 'Desery', icon: '🍰', filter: { type: 'deser' } },
-  { name: 'Wegetariańskie', icon: '🥗', filter: { diet: 'wegetarianskie' } },
+  { name: 'Wegetariańskie', icon: '🥗', filter: { diet: 'wegetariańskie' } },
   { name: 'Szybkie dania', icon: '⏱️', filter: { time: '15' } },
 ]
 
@@ -26,7 +26,7 @@ const cookingTips = [
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState<string>('')
-  //const [dietFilter, setDietFilter] = useState<'all' | 'wegetariańskie' | 'keto'>('all')
+  //const [dietFilter, setDietFilter] = useState<'all' | 'wegetariańskie' | 'ketogeniczna'>('all')
   //const [selectedCategory, setSelectedCategory] = useState<string>('Wszystkie')
   const router = useRouter()
 
@@ -42,11 +42,11 @@ export default function HomePage() {
         lowerSearchTerm.includes('wegetariańskie')||
         lowerSearchTerm.includes('vegetariańskie') ||
         lowerSearchTerm.includes('vegeteriańska')) {
-      searchParams.set('diet', 'wegetarianskie')
+      searchParams.set('diet', 'wegetariańskie')
       const cleanedSearchTerm = searchTerm.replace(/\b(vege|wegetariańska|wegetariańskie|vegetariańskie|vegeteriańska)\b/gi, '').trim()
       if (cleanedSearchTerm) searchParams.set('search', cleanedSearchTerm)
-    } else if (lowerSearchTerm.includes('keto')) {
-      searchParams.set('diet', 'keto')
+    } else if (lowerSearchTerm.includes('ketogeniczna')) {
+      searchParams.set('diet', 'ketogeniczna')
       const cleanedSearchTerm = searchTerm.replace(/\bketo\b/gi, '').trim()
       if (cleanedSearchTerm) searchParams.set('search', cleanedSearchTerm)
     } else if (lowerSearchTerm.includes('wegańskie') ||
@@ -69,7 +69,7 @@ export default function HomePage() {
       const cleanedSearchTerm = searchTerm.replace(/\b(deser)\b/gi, '').trim()
       if (cleanedSearchTerm) searchParams.set('search', cleanedSearchTerm)
     } else if (lowerSearchTerm.includes('napój') || lowerSearchTerm.includes('napoje')) {
-      searchParams.set('type', 'napoj')
+      searchParams.set('type', 'napój')
       const cleanedSearchTerm = searchTerm.replace(/\b(napój|napoje)\b/gi, '').trim()
       if (cleanedSearchTerm) searchParams.set('search', cleanedSearchTerm)
     } else if (lowerSearchTerm.includes('sniadania')) {
@@ -77,7 +77,7 @@ export default function HomePage() {
       const cleanedSearchTerm = searchTerm.replace(/\b(sniadania)\b/gi, '').trim()
       if (cleanedSearchTerm) searchParams.set('search', cleanedSearchTerm)
     } else if (lowerSearchTerm.includes('wołowina')) {
-      searchParams.set('meat', 'wolowina')
+      searchParams.set('meat', 'wołowina')
       const cleanedSearchTerm = searchTerm.replace(/\b(wołowina)\b/gi, '').trim()
       if (cleanedSearchTerm) searchParams.set('search', cleanedSearchTerm)
     } else {

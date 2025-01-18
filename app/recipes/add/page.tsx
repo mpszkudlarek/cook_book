@@ -269,7 +269,7 @@ export default function AddRecipePage() {
                       <SelectItem value="zupa">Zupa</SelectItem>
                       <SelectItem value="danie główne">Danie główne</SelectItem>
                       <SelectItem value="deser">Deser</SelectItem>
-                      <SelectItem value="napoj">Napój</SelectItem>
+                      <SelectItem value="napój">Napój</SelectItem>
                       <SelectItem value="śniadania">Śniadanie</SelectItem>
                     </SelectContent>
                   </Select>
@@ -281,10 +281,10 @@ export default function AddRecipePage() {
                       <SelectValue placeholder="Wybierz rodzaj mięsa" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="drob">Drób</SelectItem>
-                      <SelectItem value="wolowina">Wołowina</SelectItem>
+                      <SelectItem value="drób">Drób</SelectItem>
+                      <SelectItem value="wołowina">Wołowina</SelectItem>
                       <SelectItem value="wieprzowina">Wieprzowina</SelectItem>
-                      <SelectItem value="owoce-morza">Owoce morza</SelectItem>
+                      <SelectItem value="owoce morza">Owoce morza</SelectItem>
                       <SelectItem value="none">Brak</SelectItem>
                     </SelectContent>
                   </Select>
@@ -299,8 +299,8 @@ export default function AddRecipePage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="wegańskie">Wege</SelectItem>
-                    <SelectItem value="wegetarianskie">Wegetariańskie</SelectItem>
-                    <SelectItem value="keto">Keto</SelectItem>
+                    <SelectItem value="wegetariańskie">Wegetariańskie</SelectItem>
+                    <SelectItem value="ketogeniczna">Keto</SelectItem>
                     <SelectItem value="none">Brak</SelectItem>
                   </SelectContent>
                 </Select>
@@ -385,7 +385,7 @@ export default function AddRecipePage() {
           </Card>
 
           <div className="flex justify-end gap-4">
-            <Button type="button" variant="outline" className="text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 transition-colors duration-300" onClick={() => router.push('/results')}>Anuluj</Button>
+            <Button type="button" variant="outline" className="bg-red-100 text-red-500 hover:bg-red-200" onClick={() => router.push('/results')}>Anuluj</Button>
             <Button type="submit" className="bg-green-600 text-white hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 transition-colors duration-300">Opublikuj przepis</Button>
           </div>
         </form>

@@ -20,7 +20,7 @@ export function FeaturedRecipes() {
   //  if (selectedCategory === 'Śniadania') return recipe.type === 'śniadania';
   //  if (selectedCategory === 'Obiady') return recipe.type === 'danie główne';
   //  if (selectedCategory === 'Desery') return recipe.type === 'deser';
-  //  if (selectedCategory === 'Wegetariańskie') return recipe.diet === 'wegetarianskie' || recipe.diet === 'wegańskie';
+  //  if (selectedCategory === 'Wegetariańskie') return recipe.diet === 'wegetariańskie' || recipe.diet === 'wegańskie';
   //  if (selectedCategory === 'Szybkie dania') return recipe.cookingTime <= 15;
   //  return true;
   //}).slice(0, 3);
