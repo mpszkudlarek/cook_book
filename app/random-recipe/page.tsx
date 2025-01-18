@@ -10,9 +10,9 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Beef, Leaf, UtensilsCrossed, Timer, Search } from 'lucide-react'
 import { getRandomRecipe, Recipe } from '@/lib/recipes'
 
-type MeatFilter = 'all' | 'drob' | 'wolowina' | 'wieprzowina' | 'owoce morza' | 'brak'
-type DietFilter = 'all' | 'wege' | 'wegetarianskie' | 'keto' | 'none'
-type TypeFilter = 'all' | 'zupa' | 'danie główne' | 'deser' | 'napoj' | 'śniadania'
+type MeatFilter = 'all' | 'drób' | 'wołowina' | 'wieprzowina' | 'owoce morza' | 'none'
+type DietFilter = 'all' | 'wegańskie' | 'wegetariańskie' | 'ketogeniczna' | 'none'
+type TypeFilter = 'all' | 'zupa' | 'danie główne' | 'deser' | 'napój' | 'śniadania'
 type TimeFilter = 'all' | '15' | '30' | '60' | '60+'
 
 export default function RandomRecipePage() {
