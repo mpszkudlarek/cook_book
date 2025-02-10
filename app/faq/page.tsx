@@ -1,7 +1,7 @@
 import Link from "next/link"
 import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card"
-import {Youtube, HelpCircle} from 'lucide-react'
+import {Youtube} from 'lucide-react'
 
 const faqs = [
     {

@@ -1,13 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { HelpCircle, Search, ChefHat, Utensils } from 'lucide-react'
 import { FeaturedRecipes } from "@/components/featured-recipes"
 import { Card, CardContent } from "@/components/ui/card"
 import { useRouter } from 'next/navigation'
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const popularCategories = [
   { name: 'Śniadania', icon: '🍳', filter: { type: 'śniadania' } },
@@ -26,8 +25,6 @@ const cookingTips = [
 
 export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState<string>('')
-  //const [dietFilter, setDietFilter] = useState<'all' | 'wegetariańskie' | 'ketogeniczna'>('all')
-  //const [selectedCategory, setSelectedCategory] = useState<string>('Wszystkie')
   const router = useRouter()
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {

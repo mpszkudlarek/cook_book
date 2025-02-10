@@ -23,7 +23,7 @@ export default function RootLayout({
                     <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
                     <footer className="bg-secondary">
                         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-                            © 2024 CookBook. Wszystkie prawa zastrzeżone.
+                            © 2025 CookBook. Wszystkie prawa zastrzeżone.
                         </div>
                     </footer>
                 </div>

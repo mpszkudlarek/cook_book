@@ -37,7 +37,6 @@ export default function RandomRecipePage() {
         if (recipe) {
             setRandomRecipe(recipe)
         } else {
-            // If no recipe matches the filters, show an alert
             alert("Nie znaleziono przepisu spełniającego podane kryteria. Spróbuj zmienić filtry.")
         }
     }, [searchTerm, meatFilter, dietFilter, typeFilter, timeFilter])
